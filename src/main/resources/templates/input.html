@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>入力画面</title>
+</head>
+<body><!-- 全角！で挟んだ箇所はJavaチームにあわせて修正が必要 -->
+	<h1>プレゼント・住所入力</h1>
+	<form th:action="@{！コントローラの入力チェックメソッド名！}" method="post" th:object="${フォームクラス名}">
+		<h2>プレゼント番号入力</h2>
+		<input type="text" th:field="*{present}">
+		<h2>住所入力</h2>
+		<input type="text" th:field="*{present}">
+		<input type="submit" value="決定">
+	</form>
+</body>
+</html>
