@@ -4,14 +4,18 @@
 	<meta charset="UTF-8">
 	<title>入力画面</title>
 </head>
-<body><!-- 全角！で挟んだ箇所はJavaチームにあわせて修正が必要 -->
+<body><!-- 全角！で挟んだ箇所はJavaチームにあわせて修正が必要 12/13 -->
 	<h1>プレゼント・住所入力</h1>
 	<form th:action="@{！コントローラの入力チェックメソッド名！}" method="post" th:object="${フォームクラス名}">
 		<h2>プレゼント番号入力</h2>
 		<input type="text" th:field="*{present}">
 		<h2>住所入力</h2>
-		<input type="text" th:field="*{present}">
+		<input type="text" th:field="*{address}">
 		<input type="submit" value="決定">
+		<!-- エラー表示 -->
+			<ul th:if="${#fields.hasErrors('*')}">
+				<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+			</ul>
 	</form>
 </body>
 </html>
