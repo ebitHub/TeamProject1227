@@ -15,30 +15,29 @@ import com.example.demo.service.PresentService;
 @Controller
 public class PresentController {
 
-	 @Autowired
-	    private PresentService presentService;  // サービスのインスタンスを@Autowiredでインジェクト
+    @Autowired
+    private PresentService presentService;  // サービスのインスタンスを@Autowiredでインジェクト
 
-	    // 1. Index (トップ画面)
-	    @GetMapping("/")
-	    public String showIndex() {
-	        return "index";  // index.htmlを表示
-	    }
+    // 1. Index (トップ画面)
+    @GetMapping("/")
+    public String showInput() {
+        return "input";  // input.htmlを表示
+    }
 
-	    // プレゼントの入力と住所の入力を受け取る
-	    @PostMapping("/request")
-	    public String processRequest(@ModelAttribute Enpresent request, Model model) {
-	        model.addAttribute("request", request);  // 入力データを確認画面に渡す
-	        return "confirm";  // confirm.htmlへ遷移
-	    }
+    // プレゼントの入力と住所の入力を受け取る
+    @PostMapping("/request")
+    public String processRequest(@ModelAttribute Enpresent request, Model model) {
+        model.addAttribute("request", request);  // 入力データを確認画面に渡す
+        return "confirm";  // confirm.htmlへ遷移
+    }
 
-	    // 2. Confirm (確認画面)
-	    @PostMapping("/submit")
-	    public String submitRequest(@ModelAttribute Enpresent request) {
-	        // インスタンスメソッドとして呼び出し
-	        presentService.savePresent(request); // プレゼントのリクエストをデータベースに保存
-	        return "success"; // success.htmlへ遷移
-	    }
-	
+    // 2. Confirm (確認画面)
+    @PostMapping("/submit")
+    public String submitRequest(@ModelAttribute Enpresent request) {
+        // インスタンスメソッドとして呼び出し
+        presentService.savePresent(request); // プレゼントのリクエストをデータベースに保存
+        return "success"; // success.htmlへ遷移
+    }
 
     // 3. Success (完了画面)
     @GetMapping("/success")
@@ -57,6 +56,6 @@ public class PresentController {
     // 5. 戻るボタンの処理 (確認画面から戻る)
     @GetMapping("/back")
     public String goBackToIndex() {
-        return "index";  // 入力画面に戻る
+        return "input";  // 入力画面に戻る
     }
 }
