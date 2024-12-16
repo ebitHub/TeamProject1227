@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>確認画面</title>
 </head>
 <body>
-
+	<h1>入力内容確認</h1><!-- Formクラスの内容を表示 -->
+	<h2>プレゼント番号</h2>
+	<h3>[[${！フォーム名！.present}]]</h3>
+	<h2>住所</h2>
+	<h3>[[${！フォーム名！.address}]]</h3>
+	<!-- 戻るボタン inputにもどる -->
+	<a th:href="@{/input}">入力画面にもどる</a>
+	<!-- OKボタン 入力内容をSQLに登録、successにすすむ-->
+	<a th:href="@{/success}">OK</a>
 </body>
 </html>
