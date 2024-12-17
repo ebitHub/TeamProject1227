@@ -1,61 +1,44 @@
 package com.example.demo.Controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.entity.Enpresent;  // エンティティ名は Enpresent のまま
-import com.example.demo.service.PresentService;
+import com.example.demo.form.PresentForm;
 
 @Controller
 public class PresentController {
 
-    @Autowired
-    private PresentService presentService;  // サービスのインスタンスを@Autowiredでインジェクト
-
-    // 1. Index (トップ画面)
-    @GetMapping("/")
-    public String showInput() {
-        return "input";  // input.htmlを表示
+    // 入力画面（inputビュー）を表示
+    @GetMapping("/input")
+    public String showForm(Model model) {
+        model.addAttribute("form", new PresentForm());
+        return "input";  // input.htmlビュー
     }
 
-    // プレゼントの入力と住所の入力を受け取る
-    @PostMapping("/request")
-    public String processRequest(@ModelAttribute Enpresent request, Model model) {
-        model.addAttribute("request", request);  // 入力データを確認画面に渡す
-        return "confirm";  // confirm.htmlへ遷移
+    // 確認画面（confirmビュー）に遷移
+    @PostMapping("/confirm")
+    public String confirmForm(@ModelAttribute PresentForm form, Model model) {
+        // 確認用にフォームデータをモデルに追加
+        model.addAttribute("form", form);
+        return "confirm";  // confirm.htmlビュー
     }
 
-    // 2. Confirm (確認画面)
+    // 成功画面（successビュー）に遷移
     @PostMapping("/submit")
-    public String submitRequest(@ModelAttribute Enpresent request) {
-        // インスタンスメソッドとして呼び出し
-        presentService.savePresent(request); // プレゼントのリクエストをデータベースに保存
-        return "success"; // success.htmlへ遷移
+    public String submitForm(@ModelAttribute PresentForm form) {
+        // フォームの送信後の処理（例: 保存など）
+        System.out.println("プレゼント番号: " + form.getPresentNo());  // 修正済み
+        System.out.println("住所: " + form.getAddress());
+        return "success";  // success.htmlビュー
     }
 
-    // 3. Success (完了画面)
-    @GetMapping("/success")
-    public String showSuccess() {
-        return "success";  // success.htmlを表示
-    }
-
-    // 4. List (管理者用リスト画面)
+    // リスト画面（listビュー）を表示
     @GetMapping("/list")
-    public String showRequestList(Model model) {
-        List<Enpresent> requests = presentService.getAllRequests();  // 修正: `enpresentService` を `presentService` に変更
-        model.addAttribute("requests", requests);  // リストをビューに渡す
-        return "list";  // list.htmlを表示
-    }
-
-    // 5. 戻るボタンの処理 (確認画面から戻る)
-    @GetMapping("/back")
-    public String goBackToIndex() {
-        return "input";  // 入力画面に戻る
+    public String showList() {
+        // 何らかのリストを表示するための処理
+        return "list";  // list.htmlビュー
     }
 }
