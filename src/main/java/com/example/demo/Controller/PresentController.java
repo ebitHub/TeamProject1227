@@ -80,15 +80,10 @@ public class PresentController {
 		}
 		
 		// リスト画面（listビュー）を表示
+	    //「http://localhost:8080/list」でアクセス
 		@GetMapping("/list")
-		public String showList() {
-		    try {
-		        // 何らかのリストを表示するための処理
-		        return "list";  // list.htmlビューに遷移
-		    } catch (Exception e) {
-		        // エラーが発生した場合、エラーログを出力
-		        e.printStackTrace();  // スタックトレースをコンソールに表示
-		        return "error";  // error.htmlビューに遷移
-		    }
+		public String showList(Model model) {
+		    model.addAttribute("present_list",presentMapper.getAllPresentEntities());
+		    return "list";
 		} 
 }
