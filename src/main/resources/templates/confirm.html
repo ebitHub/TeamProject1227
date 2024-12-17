@@ -7,9 +7,9 @@
 <body>
 	<h1>入力内容確認</h1><!-- Formクラスの内容を表示 -->
 	<h2>プレゼント番号</h2>
-	<h3>[[${！フォーム名！.present}]]</h3>
+	<h3>[[${presentForm.present}]]</h3>
 	<h2>住所</h2>
-	<h3>[[${！フォーム名！.address}]]</h3>
+	<h3>[[${presentForm.address}]]</h3>
 	<!-- 戻るボタン inputにもどる -->
 	<a th:href="@{/input}">入力画面にもどる</a>
 	<!-- OKボタン 入力内容をSQLに登録、successにすすむ-->

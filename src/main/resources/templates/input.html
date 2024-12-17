@@ -6,7 +6,7 @@
 	<link rel="stylesheet" th:href="@{/css/inputLayout.css}"><!-- 別ファイルのCSSを導入する際に記載　th:hrefにファイルパスを入れる -->
 </head>
 	<h1>プレゼント・住所入力</h1>
-	<form th:action="@{/confirm}" method="post" th:object="${PresentForm}">
+	<form th:action="@{/confirm}" method="post" th:object="${presentForm}">
 		<!-- プレゼントリスト -->
 		<h2>プレゼントリスト</h2>
 		<h5>1. ぬいぐるみ　　2. グローブ　　　3. ブロック</h5>
