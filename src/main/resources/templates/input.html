@@ -14,7 +14,7 @@
 		<!-- 入力フォーム -->
 		<div>
 			<h2>プレゼント番号入力（1～6で入力）</h2>
-			<input type="text" th:field="*{present}">
+			<input type="number" min="1" max="6" th:field="*{present}">
 			<h2>住所入力</h2>
 			<input type="text" th:field="*{address}">
 		</div>
