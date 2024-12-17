@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>入力画面</title>
+	<link rel="stylesheet" th:href="@{/css/inputLayout.css}"><!-- 別ファイルのCSSを導入する際に記載　th:hrefにファイルパスを入れる -->
 </head>
-<body><!-- 全角！で挟んだ箇所はJavaチームにあわせて修正が必要 12/13 -->
 	<h1>プレゼント・住所入力</h1>
-	<form th:action="@{！コントローラの入力チェックメソッド！}" method="post" th:object="${フォームクラス名}">
+	<form th:action="@{/confirm}" method="post" th:object="${presentForm}">
 		<!-- プレゼントリスト -->
 		<h2>プレゼントリスト</h2>
 		<h5>1. ぬいぐるみ　2. グローブ　3. ブロック</h5>
@@ -21,9 +21,11 @@
 		<!-- 決定ボタン -->
 		<input type="submit" value="決定">
 		<!-- エラー表示  2行目#fields.errors(present)とかで個別にできるp.207 プレ・住所わけたい＆赤文字にしたい-->
-			<ul th:if="${#fields.hasErrors('*')}">
-				<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
-			</ul>
+			<div class="errorStr">
+				<ul th:if="${#fields.hasErrors('*')}">
+					<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+				</ul>
+			</div>
 	</form>
 </body>
 </html>

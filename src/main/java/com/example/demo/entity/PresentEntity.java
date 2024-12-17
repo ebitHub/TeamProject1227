@@ -6,8 +6,8 @@ import lombok.Data;
 public class PresentEntity {
 	
 	/*データベースのテーブルと対応するEntityクラス*/	
-	//プレゼント（NO1～6）
-	private int presentNo;
+	//プレゼント（No1～6）
+	private int present;
 	
 	//住所（アドレス）
 	private String address;
