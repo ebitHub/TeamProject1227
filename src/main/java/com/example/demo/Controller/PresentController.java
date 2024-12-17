@@ -7,13 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.entity.PresentEntity;
 import com.example.demo.form.PresentForm;
+import com.example.demo.mapper.PresentMapper;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 
 @Controller
+@RequiredArgsConstructor
 public class PresentController {
 
+	// DI
+	private final PresentMapper presentMapper;
+	
 	// 入力画面（inputビュー）を表示
 	@GetMapping("/input")
 	public String showForm(Model model) {
@@ -49,19 +56,27 @@ public class PresentController {
 		}
 	}
 
-		// 成功画面（successビュー）に遷移
+	// 成功画面（successビュー）に遷移
 		@PostMapping("/success")
-		public String successForm(@ModelAttribute PresentForm form) {
-		    try {
-		        // フォームの送信後の処理（例: 保存など）
-		        System.out.println("プレゼント番号: " + form.getPresent());  // プレゼント番号の出力
-		        System.out.println("住所: " + form.getAddress());  // 住所の出力
-		        return "success";  // success.htmlビューに遷移
-		    } catch (Exception e) {
-		        // エラーが発生した場合、エラーログを出力
-		        e.printStackTrace();  // スタックトレースをコンソールに表示
-		        return "error";  // error.htmlビューに遷移
-		    }
+		public String successForm(@ModelAttribute PresentForm form, Model model) {
+
+			/* SQLへのデータ登録 */
+			// エンティティのインスタンスを生成
+			PresentEntity pe = new PresentEntity();
+			// 生成したインスタンスにForm内の要素を代入
+			pe.setAddress(form.getAddress());
+			pe.setPresent(form.getPresent());
+			// 主キーはここでは指定しない（マッパーファイルのカラムで処理）
+			
+			// マッパーインターフェースにエンティティを渡す
+			presentMapper.insertPresentEntity(pe);
+			
+				/* 確認用 */
+				// フォームの送信後の処理（例: 保存など）
+				System.out.println("プレゼント番号: " + form.getPresent());  // プレゼント番号の出力
+				System.out.println("住所: " + form.getAddress());  // 住所の出力
+			
+			return "success";  // success.htmlビューに遷移
 		}
 		
 		// リスト画面（listビュー）を表示
