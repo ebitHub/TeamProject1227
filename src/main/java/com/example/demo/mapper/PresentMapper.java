@@ -10,7 +10,7 @@ public interface PresentMapper {
 	/*全件取得*/
     List<PresentEntity> getAllPresentEntities();
 	/*登録*/
-    void insertPresntEntity(PresentEntity presentEntity);
+    void insertPresentEntity(PresentEntity presentEntity);
     
     
     
