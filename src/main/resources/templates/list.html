@@ -3,24 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>リクエスト一覧</title>
+	<link rel="stylesheet" th:href="@{/css/listLayout.css}"><!-- 別ファイルのCSSを導入する際に記載　th:hrefにファイルパスを入れる -->
 </head>
 <body>
 	<h1>リクエスト一覧</h1>
-	<table th:if="${present_list}" border="1">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>プレゼント番号</th>
-				<th>住所</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="presentList : ${present_list}">
-			<td th:text="${presentList.id}">ID</td>
-			<td th:text="${presentList.present}">プレゼント番号</td>
-			<td th:text="${presentList.address}">住所</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="presentList">
+		<table th:if="${present_list}" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>プレゼント番号</th>
+					<th>住所</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="presentList : ${present_list}">
+				<td th:text="${presentList.id}">ID</td>
+				<td th:text="${presentList.present}">プレゼント番号</td>
+				<td th:text="${presentList.address}">住所</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
