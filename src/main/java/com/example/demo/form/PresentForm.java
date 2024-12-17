@@ -5,8 +5,7 @@ import lombok.Data;
 @Data
 public class PresentForm {
 
-	/*入力データを一時的に保持するForm*/
-	
+	/*入力データを一時的に保持するForm*/	
 	//プレゼント（NO1～6）
 	private int presentNo;
 	//住所（アドレス）
