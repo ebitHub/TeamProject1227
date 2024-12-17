@@ -7,7 +7,7 @@ public class PresentEntity {
 	
 	/*データベースのテーブルと対応するEntityクラス*/	
 	//プレゼント（NO1～6）
-	private int presentNo;
+	private int present;
 	
 	//住所（アドレス）
 	private String address;
