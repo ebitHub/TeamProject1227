@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.presentList{
+	width: 750px;
+    height: 600px;
+	overflow: scroll;      /* スクロールする */
+	white-space: nowrap;   /* 自動改行しない */
+}
