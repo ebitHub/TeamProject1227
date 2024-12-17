@@ -2,11 +2,14 @@ package com.example.demo.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.PresentForm;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class PresentController {
@@ -20,12 +23,15 @@ public class PresentController {
 
     // 確認画面（confirmビュー）に遷移
     @PostMapping("/confirm")
-    public String confirmForm(@ModelAttribute PresentForm form, Model model) {
+    public String confirmForm(@ModelAttribute @Valid PresentForm form, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            // 入力チェックNGの場合、入力画面に戻る
+            return "input";
+        }
         // 確認用にフォームデータをモデルに追加
         model.addAttribute("form", form);
         return "confirm";  // confirm.htmlビュー
     }
-
     // 成功画面（successビュー）に遷移
     @PostMapping("/submit")
     public String submitForm(@ModelAttribute PresentForm form) {
