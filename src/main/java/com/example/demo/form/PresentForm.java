@@ -12,7 +12,7 @@ public class PresentForm {
 	//プレゼント（NO1～6）
 	@NotNull(message = "数値が未入力です。")
 //	@Range(min = 1, max = 6, message = "{min}～{max}の数値を入力して下さい。")
-	private int present;
+	private Integer present;
 	//住所（アドレス）
 	@NotNull(message = "住所が未入力です。")
 	@Length(min = 1, max = 250)
