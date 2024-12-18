@@ -8,7 +8,7 @@ public class PresentEntity {
 	/*データベースのテーブルと対応するEntityクラス*/	
 	
 	//自動生成のID番号
-	private int id;
+	private Integer id;
 	
 	//プレゼント（No1～6）
 	private Integer present;
