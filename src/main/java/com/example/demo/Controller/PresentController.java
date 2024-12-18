@@ -22,7 +22,7 @@ public class PresentController {
 	private final PresentMapper presentMapper;
 	
 	//**「form back bean」の初期化
-			@ModelAttribute("form")
+			@ModelAttribute
 			public PresentForm setUpForm() {
 			    return new PresentForm();
 			}
