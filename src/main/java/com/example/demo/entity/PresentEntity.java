@@ -11,7 +11,7 @@ public class PresentEntity {
 	private int id;
 	
 	//プレゼント（No1～6）
-	private int present;
+	private Integer present;
 	
 	//住所（アドレス）
 	private String address;
