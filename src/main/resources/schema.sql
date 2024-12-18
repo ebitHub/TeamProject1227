@@ -6,7 +6,7 @@ CREATE TABLE present_list (
     -- ID: 主キー（自動生成）
     id SERIAL PRIMARY KEY,
     -- プレゼント番号: NULL不許可
-    present INTEGER NOT NULL,
+    present INTEGER ,
     -- 住所: NULL不許可
-    address VARCHAR(250) NOT NULL
+    address VARCHAR(250)
 );

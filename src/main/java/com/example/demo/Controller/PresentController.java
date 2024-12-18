@@ -68,10 +68,13 @@ public class PresentController {
 			// マッパーインターフェースにエンティティを渡す
 			presentMapper.insertPresentEntity(pe);
 			
+			
+			// 登録成功メッセージを追加
+		    model.addAttribute("message", "登録成功！リクエスト完了");
 				/* 確認用 */
 				// フォームの送信後の処理（例: 保存など）
-				System.out.println("プレゼント番号: " + form.getPresent());  // プレゼント番号の出力
-				System.out.println("住所: " + form.getAddress());  // 住所の出力
+//				System.out.println("プレゼント番号: " + form.getPresent());  // プレゼント番号の出力
+//				System.out.println("住所: " + form.getAddress());  // 住所の出力
 			
 			return "success";  // success.htmlビューに遷移
 		}
