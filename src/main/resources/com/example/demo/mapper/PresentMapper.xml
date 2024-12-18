@@ -8,7 +8,7 @@
     </select>
     
 	<!-- 【INSERT】プレゼントの種類と住所を登録するSQL -->
-	<insert id="insertPresntEntity" parameterType="com.example.demo.entity.PresentEntity">
+	<insert id="insertPresentEntity" parameterType="com.example.demo.entity.PresentEntity">
 		INSERT INTO present_list (present, address)
 		VALUES (#{present}, #{address})
 	</insert>
