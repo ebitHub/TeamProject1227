@@ -2,6 +2,7 @@ package com.example.demo.form;
 
 import org.hibernate.validator.constraints.Length;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -14,7 +15,7 @@ public class PresentForm {
 //	@Range(min = 1, max = 6, message = "{min}～{max}の数値を入力して下さい。")
 	private Integer present;
 	//住所（アドレス）
-	@NotNull(message = "住所が未入力です。")
-	@Length(min = 1, max = 250)
+	@NotBlank(message = "住所は必須入力です。")
+	@Length(min = 1, max = 250, message = "住所は1文字以上、250文字以内で入力してください。")
 	private String address;
 }
