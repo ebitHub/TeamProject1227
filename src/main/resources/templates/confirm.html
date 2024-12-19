@@ -16,7 +16,9 @@
     
     <!-- OKボタン -->
     <form th:action="@{/success}" method="post">
-        <button type="submit">OK</button>
+		<input type="hidden" name="present" th:value="${presentForm.present}" />
+    	<input type="hidden" name="address" th:value="${presentForm.address}" />
+		<button type="submit">OK</button>
     </form>
 </body>
 </html>
