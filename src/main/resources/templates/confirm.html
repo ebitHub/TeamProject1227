@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>確認画面</title>
+    <link rel="stylesheet" th:href="@{/css/confirmLayout.css}">
 </head>
 <body>
-    <h1>入力内容確認</h1>
-    <h2>プレゼント番号</h2>
-    <h3 th:text="${presentForm.present}"></h3>
-    <h2>住所</h2>
-    <h3 th:text="${presentForm.address}"></h3>
-    
-    <!-- 戻るボタン -->
-    <a th:href="@{/input}">入力画面にもどる</a>
-    
-    <!-- OKボタン -->
-    <form th:action="@{/success}" method="post">
-		<input type="hidden" name="present" th:value="${presentForm.present}" />
-    	<input type="hidden" name="address" th:value="${presentForm.address}" />
-		<button type="submit">OK</button>
-    </form>
+	<!-- タイトル -->
+	<div class="title">
+		<h1>入力確認</h1>
+	</div>
+	
+    <div class="container">
+        <!-- プレゼント番号 -->
+        <h2>プレゼント番号</h2>
+        <h3 th:text="${presentForm.present}"></h3>
+        
+        <!-- 住所 -->
+        <h2>住所</h2>
+        <h3 th:text="${presentForm.address}"></h3>
+        
+        <!-- ボタン群 -->
+        <div class="button-group">
+            <!-- 戻るボタン -->
+            <form th:action="@{/input}" method="get">
+                <button type="submit" class="btn">入力画面にもどる</button>
+            </form>
+            <!-- OKボタン -->
+            <form th:action="@{/success}" method="post">
+                <input type="hidden" name="present" th:value="${presentForm.present}" />
+                <input type="hidden" name="address" th:value="${presentForm.address}" />
+                <button type="submit" class="btn">ＯＫ</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

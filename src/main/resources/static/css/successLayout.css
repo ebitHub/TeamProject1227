@@ -1,1 +1,68 @@
 @charset "UTF-8";
+/* 背景画像の設定 */
+body {
+    background-image: url('/image/backConfirm.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Yu Gothic', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* サンタさんの画像のスタイル */
+.santa-image {
+    text-align: center; /* 中央揃え */
+    margin: 20px 0; /* 上下の余白 */
+    margin-bottom: 30px;
+}
+
+.santa-image img {
+    max-width: 200px; /* 画像の最大幅 */
+    height: auto; /* アスペクト比を維持 */
+    border-radius: 10px; /* 角を丸くする */
+}
+
+/* テキスト類 */
+
+h1 {
+	text-align: center; /* 中央揃え */
+    font-size: 2em;
+    margin: 0;
+    line-height: 1.2;
+    color: white; /* 白色に設定 */
+    font-family: 'Hiragino Maru Gothic Pro', sans-serif;
+    margin-bottom: 5px;
+}
+h2 {
+	text-align: center; /* 中央揃え */
+    margin: 0;
+    line-height: 1.5;
+    color: white; /* 白色に設定 */
+    font-family: 'Hiragino Maru Gothic Pro', sans-serif;
+    margin-bottom: 20px;
+}
+
+
+/* ボタンのスタイル */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

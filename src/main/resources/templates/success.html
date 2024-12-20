@@ -3,40 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>入力結果</title>
+	<link rel="stylesheet" th:href="@{/css/successLayout.css}">
 </head>
 <body>
-	<!--  -->
-	<h1 th:text="${message}">登録成功！リクエスト完了</h1>
+	<!-- サンタさんの画像 -->
+	<div class="santa-image">
+	    <img src="/image/santa2.png" alt="サンタさん2">
+	</div>
+	
+	<!-- タイトル -->
+	<div class="title">
+		<h1>リクエスト完了！</h1>
+		<h1>24日まで良い子で待っててね</h1>
+	</div>
 	
 	<!-- 戻るボタン -->
-	<a th:href="@{/input}">入力画面に戻る</a>
-
-	<!-- 表示確認用　本番時削除ここから 
-	<hr>
-	<h2>プレゼント番号</h2>
-	<h3>[[${presentForm.present}]]</h3>
-	<h2>住所</h2>
-	<h3>[[${presentForm.address}]]</h3>
-	
-	<h2>（デバック用表示）上記の入力内容が下記のリストに追加されているか確認してください</h2>
-	
-	<table th:if="${present_list}" border="1">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>プレゼント番号</th>
-				<th>住所</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="presentList : ${present_list}">
-			<td th:text="${presentList.id}">ID</td>
-			<td th:text="${presentList.present}">プレゼント番号</td>
-			<td th:text="${presentList.address}">住所</td>
-			</tr>
-		</tbody>
-	</table>
-	 表示確認用　本番時削除ここまで -->
+    <form th:action="@{/input}" method="get">
+        <button type="submit" class="btn">入力画面にもどる</button>
+    </form>
 	
 </body>
 </html>

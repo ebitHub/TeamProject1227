@@ -16,6 +16,7 @@ body {
 form {
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 30px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
@@ -66,6 +67,7 @@ h1,h2 {
     gap: 15px; /* 要素間の間隔 */
     justify-items: center; /* 中央揃え */
     margin: 20px 0;
+    margin-bottom: 40px;
 }
 
 .present-list div {
@@ -115,7 +117,7 @@ input[type="submit"]:hover {
 /* エラーメッセージを左揃えにする */
 .errorStr {
     text-align: left;
-    margin-left: 10px; /* 必要なら左余白を追加 */
+    margin-left: 10px; /* 左余白を追加 */
     color: red;
-    font-size: 0.9em; /* サイズ調整（任意） */
+    font-size: 0.9em; /* サイズ調整 */
 }
