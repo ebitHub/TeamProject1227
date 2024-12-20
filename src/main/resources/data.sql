@@ -30,3 +30,11 @@ INSERT INTO present_list (present, address) VALUES
 (5, '福島県福島市栄町81-82-83'),
 (6, '岐阜県岐阜市神田町84-85-86'),
 (6, '富山県富山市桜町87-88-89');
+
+-- present_nameテーブルへのデータ登録
+INSERT INTO present_name (name) VALUES('ぬいぐるみ');
+INSERT INTO present_name (name) VALUES('グローブ');
+INSERT INTO present_name (name) VALUES('ブロック');
+INSERT INTO present_name (name) VALUES('ゲームソフト');
+INSERT INTO present_name (name) VALUES('本');
+INSERT INTO present_name (name) VALUES('自転車');
