@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>入力画面</title>
-	<link rel="stylesheet" th:href="@{/css/inputLayout.css}"><!-- 別ファイルのCSSを導入する際に記載　th:hrefにファイルパスを入れる -->
+    <meta charset="UTF-8">
+    <title>入力画面</title>
+    <link rel="stylesheet" th:href="@{/css/inputLayout.css}">
 </head>
-	<h1>プレゼント・住所入力</h1>
-	<form th:action="@{/confirm}" method="post" th:object="${presentForm}">
-		<!-- プレゼントリスト -->
-		<h2>プレゼントリスト</h2>
-		<h5>1. ぬいぐるみ　　2. グローブ　　　3. ブロック</h5>
-		<h5>4. ゲームソフト　5. 本　　　　　　6. 自転車　</h5>
-		<!-- 入力フォーム -->
- <!-- プレゼント -->
-		<div>
-			 <h2>プレゼント番号入力（1～6で入力）</h2>
-        <input type="number" min="1" max="6" th:field="*{present}">
-        <!-- プレゼントのエラーメッセージ -->
-        <div class="errorStr" th:if="${#fields.hasErrors('present')}">
-            <ul>
-                <li th:each="err : ${#fields.errors('present')}" th:text="${err}"　style="color:red"></li>
-            </ul>
+<body>
+	<!-- タイトル -->
+	<div class="title">
+		<h3>サンタさんへの</h3>
+		<h1>プレゼントリクエスト</h1>
+	</div>
+	<!-- サンタさんの画像を追加 -->
+	<div class="santa-image">
+	    <img src="/image/santa.png" alt="サンタさん">
+	</div>
+    <form th:action="@{/confirm}" method="post" th:object="${presentForm}">
+        <!-- プレゼントリスト -->
+        <h2>プレゼントリスト</h2>
+        <div class="present-list">
+            <div>
+                <img src="/image/doll.png" alt="ぬいぐるみ">
+                <p>1. ぬいぐるみ</p>
+            </div>
+            <div>
+                <img src="/image/glove.png" alt="グローブ">
+                <p>2. グローブ</p>
+            </div>
+            <div>
+                <img src="/image/block.png" alt="ブロック">
+                <p>3. ブロック</p>
+            </div>
+            <div>
+                <img src="/image/game.png" alt="ゲームソフト">
+                <p>4. ゲームソフト</p>
+            </div>
+            <div>
+                <img src="/image/book.png" alt="本">
+                <p>5. 本</p>
+            </div>
+            <div>
+                <img src="/image/bike.png" alt="自転車">
+                <p>6. 自転車</p>
+            </div>
         </div>
- <!-- 住所 -->
-			<h2>住所入力</h2>
-        	<input type="text" th:field="*{address}">
-		</div>
-		<!-- 住所のエラーメッセージ -->
-        <div class="errorStr" th:if="${#fields.hasErrors('address')}">
-            <ul>
-                <li th:each="err : ${#fields.errors('address')}" th:text="${err}"　style="color:red"></li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- 決定ボタン -->
-    <input type="submit" value="決定">
-</form>
+        <!-- 入力フォーム -->
+        <div>
+            <!-- プレゼント -->
+            <h2>①プレゼントを選んで番号を入力してね</h2>
+            <input type="number" min="1" max="6" th:field="*{present}">
+            <!-- プレゼントのエラーメッセージ -->
+            <div class="errorStr" th:if="${#fields.hasErrors('present')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('present')}" th:text="${err}"></li>
+                </ul>
+            </div>
+
+            <!-- 住所 -->
+            <h2>②住所を入力してね</h2>
+            <input type="text" th:field="*{address}">
+            <!-- 住所のエラーメッセージ -->
+            <div class="errorStr" th:if="${#fields.hasErrors('address')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('address')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 決定ボタン -->
+        <input type="submit" value="決定">
+    </form>
 </body>
 </html>
