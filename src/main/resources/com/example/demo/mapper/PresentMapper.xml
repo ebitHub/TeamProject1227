@@ -35,5 +35,15 @@
         INSERT INTO present_list (present, address)
         VALUES (#{present}, #{address})
     </insert>
+    
+    <!-- 【SELECT】プレゼントIDに対応したプレゼント名を取得するためのSQL -->
+	<select id="getPresentName" resultType="com.example.demo.entity.NameEntity">
+        SELECT
+            present_id, name
+        FROM
+            present_name
+        WHERE
+        	present_id = #{id}; 
+    </select>
 
 </mapper>

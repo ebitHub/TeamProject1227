@@ -42,6 +42,13 @@ public class PresentController {
 				        // エラーがあった場合、入力画面へ戻す
 				    return "input";
 				}
+					
+					/* 入力された数字に対応したプレゼント名をModelに追加する */
+					// 入力されたpresent_idを取得
+					int presentId = form.getPresent();
+					// present_idに対応するnameを取得
+					model.addAttribute("present_name", presentMapper.getPresentName(presentId));
+					
 					//入力チェックおk
 					// エラーがなければconfirm画面に遷移
 					model.addAttribute("form", form);
