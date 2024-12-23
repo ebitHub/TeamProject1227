@@ -5,8 +5,13 @@
 	<title>リクエスト一覧</title>
 	<link rel="stylesheet" th:href="@{/css/listLayout.css}"><!-- 別ファイルのCSSを導入する際に記載　th:hrefにファイルパスを入れる -->
 </head>
-<body>
+<body>	
 	<h1>リクエスト一覧</h1>
+	<!-- サンタさんの画像 -->
+	<div class="santa-image">
+	    <img src="/image/christmas_santa_sori.png" alt="ソリに乗ったサンタクロースの画像">
+	</div>
+	<form>
 	<div class="presentList">
 		<table th:if="${present_list}" border="1">
 			<thead>
@@ -45,6 +50,7 @@
             </tbody>
         </table>
     </div>
-
+</form>
 </body>
+
 </html>
