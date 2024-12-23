@@ -91,6 +91,7 @@ public class PresentController {
 		@GetMapping("/list")
 		public String showList(Model model) {
 		    model.addAttribute("present_list",presentMapper.getAllPresentEntities());
+		    model.addAttribute("present_counts", presentMapper.getPresentCounts());
 		    return "list";
 		} 
 }

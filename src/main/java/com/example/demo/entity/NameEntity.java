@@ -12,4 +12,7 @@ public class NameEntity {
 
 	//プレゼント名
 	private String name;
+	
+	// プレゼントの登録数
+    private Integer count;  // 集計結果を格納するフィールド
 }

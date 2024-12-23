@@ -27,5 +27,24 @@
 			</tbody>
 		</table>
 	</div>
+	<!-- 集計結果表示 -->
+    <div class="presentCounts">
+        <h2>プレゼント集計結果</h2>
+        <table th:if="${present_counts}" border="1">
+            <thead>
+                <tr>
+                    <th>プレゼント名</th>
+                    <th>登録数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="presentCount : ${present_counts}">
+                    <td th:text="${presentCount.name}">プレゼント名</td>
+                    <td th:text="${presentCount.count}">登録数</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
