@@ -163,7 +163,15 @@ input[type="submit"]:hover {
   top: -5%;
   /*雪を適当な幅で降らせる*/
   text-shadow:
-  5vw   -100px 2px,
+   -5vw  -100px 2px,  /* 左側 */
+  -10vw -300px 3px,  /* 左側 */
+  -15vw -400px 2px,  /* 左側 */
+  -20vw -500px 4px,  /* 左側 */
+  -25vw -350px 1px,  /* 左側 */
+  -30vw -450px 3px,  /* 左側 */
+  -35vw -200px 5px,  /* 左側 */
+  -40vw -300px 2px,  /* 左側 */
+  5vw   -100px 2px, /* 中央から右側 */
   10vw  -400px 3px,
   20vw  -500px 4px,
   30vw  -580px 1px,
