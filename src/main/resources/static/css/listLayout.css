@@ -1,7 +1,76 @@
 @charset "UTF-8";
 .presentList{
-	width: 500px;
+	width: 650px;
     height: 300px;
 	overflow: scroll;      /* スクロールする */
-	white-space: nowrap;   /* 自動改行しない */
+	/*white-space: nowrap;   /* 自動改行しない */
+}
+
+/* 背景画像の設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Yu Gothic', sans-serif;
+    text-align: center;
+    background-image: url('/image/backInput.png'); /* 背景画像のパスを指定 */
+    background-size: cover;
+    background-position: top center; /* 背景画像の上部を表示 */
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color: #333;
+}
+
+/* 全体の配置を中央揃え */
+form {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* テキスト類 */
+h1 {
+	text-align: center; /* 中央揃え */
+    font-size: 2.7em;
+    margin: 0;
+    line-height: 1.2;
+    color: white; /* 白色に設定 */
+    font-family: 'Hiragino Maru Gothic Pro', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* サンタさんの画像のスタイル */
+.santa-image {
+    text-align: center; /* 中央揃え */
+    margin: 15px 0; /* 上下の余白 */
+    margin-bottom: 15px;
+}
+.santa-image img {
+    max-width: 300px; /* 画像の最大幅 */
+    height: auto; /* アスペクト比を維持 */
+    border-radius: 10px; /* 角を丸くする */
+}
+
+table {
+    width: 100%; /* 表を親要素に合わせる */
+    border-collapse: collapse; /* セルの間の隙間をなくす */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd; /* セルの境界線 */
+}
+
+th {
+    background-color: #4caf50; /* ヘッダーの背景色 */
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶数行に背景色を追加 */
 }
