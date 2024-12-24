@@ -28,7 +28,7 @@ public interface PresentMapper {
             FROM present_name pn
             LEFT JOIN present_list pl ON pn.present_id = pl.present
             GROUP BY pn.present_id, pn.name
-            ORDER BY pn.present_id
+            ORDER BY count DESC
         """)
         List<NameEntity> getPresentCounts();
     
