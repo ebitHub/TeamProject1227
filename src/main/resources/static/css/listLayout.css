@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .presentList{
 	width: 650px;
-    height: 300px;
+    height: 350px;
 	overflow: scroll;      /* スクロールする */
 	/*white-space: nowrap;   /* 自動改行しない */
 }
@@ -24,7 +24,7 @@ body {
 form {
     display: inline-block;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
@@ -39,8 +39,8 @@ h1 {
     line-height: 1.2;
     color: white; /* 白色に設定 */
     font-family: 'Hiragino Maru Gothic Pro', sans-serif;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 /* サンタさんの画像のスタイル */
@@ -67,10 +67,34 @@ th, td {
 }
 
 th {
+	position: sticky; /* 固定する */
+	top: 0; /* ヘッダーを一番上に固定 */
+    z-index: 2; /* ヘッダーがセルの上に表示されるように */
     background-color: #4caf50; /* ヘッダーの背景色 */
     color: white;
 }
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9; /* 偶数行に背景色を追加 */
+}
+
+.presentCounts {
+    max-width: 500px; /* 同じ最大幅を設定 */
+    margin: 15px auto; /* テーブル全体を中央揃え */
+    padding: 10px;
+    /*border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.8);*/
+    border-radius: 10px;
+    /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);*/
+}
+
+.presentCounts table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.presentCounts th, .presentCounts td {
+    padding: 10px;
+    text-align: left;
+    /*border: 1px solid #ddd;*/
 }
