@@ -25,7 +25,7 @@ form {
 
 /* タイトル */
 .title h3 {
-	font-size: 1.7em;
+    font-size: 1.7em;
     margin: 0;
     line-height: 1.2;
     color: white; /* 白色に設定 */
@@ -34,18 +34,16 @@ form {
 }
 
 .title h1 {
-	font-size: 2.7em;
+    font-size: 2.7em;
     margin: 0;
     line-height: 1.2;
     color: white; /* 白色に設定 */
     font-family: 'Hiragino Maru Gothic Pro', sans-serif;
 }
 
-
-h1,h2 {
+h1, h2 {
     margin-bottom: 20px;
 }
-
 
 /* サンタさんの画像のスタイル */
 .santa-image {
@@ -70,8 +68,15 @@ h1,h2 {
     margin-bottom: 40px;
 }
 
+/* 各プレゼントの要素 */
 .present-list div {
-    text-align: center; /* 各要素の文字を中央揃え */
+    text-align: center; /* 中央揃え */
+    width: 120px; /* 必要に応じて調整 */
+    height: auto; /* 自動調整 */
+    /* overflow: hidden; /* 要素をはみ出さないようにする */
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 子要素を中央揃え */
 }
 
 /* プレゼント画像 */
@@ -80,6 +85,32 @@ h1,h2 {
     height: 100px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* ポインタを表示してクリック可能に */
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s; /* アニメーション */
+    box-sizing: border-box; /* ボーダーが要素のサイズに影響しないようにする */
+    display: block; /* ブロック要素にして親要素のレイアウトを保つ */
+    margin: 0 auto; /* 中央揃え */
+}
+
+/* 画像がホバーされたときの効果 */
+.present-list img:hover {
+    transform: scale(1.1); /* 少し拡大 */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* シャドウを強調 */
+    border: 2px solid #4CAF50; /* 緑色の枠線を追加 */
+}
+
+/* クリックされたときの効果 */
+.present-list img:active {
+    transform: scale(1.05); /* 少し縮小 */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* シャドウを軽減 */
+    border: 2px solid #2e7d32; /* 枠線の色を濃く */
+}
+
+/* プレゼントの名前 */
+.present-list p {
+    margin: 10px 0 0 0; /* 上の余白を調整 */
+    font-size: 1em; /* フォントサイズを調整 */
+    color: #333; /* テキストカラー */
 }
 
 /* フォームのタイトル（h2）の余白を調整 */
@@ -121,4 +152,3 @@ input[type="submit"]:hover {
     color: red;
     font-size: 0.9em; /* サイズ調整 */
 }
-

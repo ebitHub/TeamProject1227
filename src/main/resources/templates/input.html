@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>入力画面</title>
     <link rel="stylesheet" th:href="@{/css/inputLayout.css}">
+    <script>
+        // JavaScript: クリックされた番号を入力フォームに設定する関数
+        function setPresentNumber(number) {
+            document.getElementById('presentInput').value = number;
+        }
+    </script>
 </head>
 <body>
 	<!-- タイトル -->
@@ -20,27 +26,27 @@
         <h2>プレゼントリスト</h2>
         <div class="present-list">
             <div>
-                <img src="/image/doll.png" alt="ぬいぐるみ">
+                <img src="/image/doll.png" alt="ぬいぐるみ" onclick="setPresentNumber(1)">
                 <p>1. ぬいぐるみ</p>
             </div>
             <div>
-                <img src="/image/glove.png" alt="グローブ">
+                <img src="/image/glove.png" alt="グローブ" onclick="setPresentNumber(2)">
                 <p>2. グローブ</p>
             </div>
             <div>
-                <img src="/image/block.png" alt="ブロック">
+                <img src="/image/block.png" alt="ブロック" onclick="setPresentNumber(3)">
                 <p>3. ブロック</p>
             </div>
             <div>
-                <img src="/image/game.png" alt="ゲームソフト">
+                <img src="/image/game.png" alt="ゲームソフト" onclick="setPresentNumber(4)">
                 <p>4. ゲームソフト</p>
             </div>
             <div>
-                <img src="/image/book.png" alt="本">
+                <img src="/image/book.png" alt="本" onclick="setPresentNumber(5)">
                 <p>5. 本</p>
             </div>
             <div>
-                <img src="/image/bike.png" alt="自転車">
+                <img src="/image/bike.png" alt="自転車" onclick="setPresentNumber(6)">
                 <p>6. 自転車</p>
             </div>
         </div>
@@ -49,7 +55,7 @@
         <div>
             <!-- プレゼント -->
             <h2>①プレゼントを選んで番号を入力してね</h2>
-            <input type="number" min="1" max="6" th:field="*{present}">
+            <input id="presentInput" type="number" min="1" max="6" th:field="*{present}">
             <!-- プレゼントのエラーメッセージ -->
             <div class="errorStr" th:if="${#fields.hasErrors('present')}">
                 <ul>
