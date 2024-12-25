@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>サンタ専用メニュー</title>
+    <link rel="stylesheet" th:href="@{/css/santa_menuLayout.css}">
 </head>
 <body>
     <h2>サンタ専用メニュー画面</h2>
-    <hr>
-    <a th:href="@{/list}">リクエスト一覧へ</a>
     <div class="welcome-message">
         ようこそ、<span sec:authentication="name"></span> さん
     </div>
+    <a th:href="@{/list}">リクエスト一覧へ</a>
 
     <!-- ログアウト -->
     <form th:action="@{/logout}" method="post">
