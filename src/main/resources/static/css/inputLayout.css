@@ -31,6 +31,7 @@ form {
     color: white; /* 白色に設定 */
     margin-top: 100px;
     font-family: 'Hiragino Maru Gothic Pro', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* タイトルに影を追加 */
 }
 
 .title h1 {
@@ -39,6 +40,7 @@ form {
     line-height: 1.2;
     color: white; /* 白色に設定 */
     font-family: 'Hiragino Maru Gothic Pro', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* タイトルに影を追加 */
 }
 
 h1, h2 {

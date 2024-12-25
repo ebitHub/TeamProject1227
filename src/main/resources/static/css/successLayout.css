@@ -38,6 +38,7 @@ h1 {
     color: white; /* 白色に設定 */
     font-family: 'Hiragino Maru Gothic Pro', sans-serif;
     margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* タイトルに影を追加 */
 }
 h2 {
 	text-align: center; /* 中央揃え */
