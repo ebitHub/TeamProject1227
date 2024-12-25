@@ -25,7 +25,7 @@ public class SecurityConfig {
 		http
 		// ★HTTPリクエストに対するセキュリティ設定
 		.authorizeHttpRequests(authz -> authz
-				// 「/list」へのアクセスは認証が必要
+				// 「/list」と「santaMenu」へのアクセスは認証が必要
 				.requestMatchers("/list","/santaMenu").authenticated()
 				// その他のリクエストは認証を必要としない
 				.anyRequest().permitAll())
