@@ -38,3 +38,7 @@ INSERT INTO present_name (name) VALUES('ブロック');
 INSERT INTO present_name (name) VALUES('ゲームソフト');
 INSERT INTO present_name (name) VALUES('本');
 INSERT INTO present_name (name) VALUES('自転車');
+
+
+-- 認証テーブルへのダミーデータの追加
+INSERT INTO authentications (username, password) VALUES ('santa', '$2a$10$WVJkX7dImCUMItAg5DZYx.YE/nm8Txo6W7Woshkcc1GqZKllWXAne');

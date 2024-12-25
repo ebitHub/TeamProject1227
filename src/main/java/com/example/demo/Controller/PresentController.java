@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.entity.PresentEntity;
+import com.example.demo.form.LoginForm;
 import com.example.demo.form.PresentForm;
 import com.example.demo.mapper.PresentMapper;
 
@@ -94,4 +95,16 @@ public class PresentController {
 		    model.addAttribute("present_counts", presentMapper.getPresentCounts());
 		    return "list";
 		} 
+		
+		//サンタ専用メニュー画面
+				@GetMapping("/santaMenu")
+				public String showSantaMenu(){
+					return "santa_menu";
+				}
+				
+				@GetMapping("/login")
+				 public String showLogin(@ModelAttribute LoginForm form) {
+				 // templatesフォルダ配下のlogin.htmlに遷移
+				 return "login";
+				 }
 }

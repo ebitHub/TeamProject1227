@@ -1,6 +1,7 @@
 -- テーブルが存在したら削除する
 DROP TABLE IF EXISTS present_list;
 DROP TABLE IF EXISTS present_name;
+DROP TABLE IF EXISTS authentications;
 
 -- プレゼント名を格納するテーブルの作成
 CREATE TABLE present_name (
@@ -21,3 +22,11 @@ CREATE TABLE present_list (
     -- 外部キー設定
      present_id INTEGER REFERENCES present_name(present_id) ON DELETE CASCADE
     );
+   
+-- 認証情報を格納するテーブル
+CREATE TABLE authentications (
+ -- ユーザー名：主キー
+ username VARCHAR(50) PRIMARY KEY,
+ -- パスワード
+ password VARCHAR(255) NOT NULL
+);
