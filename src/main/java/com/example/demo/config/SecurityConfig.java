@@ -41,7 +41,7 @@ public class SecurityConfig {
 				// パスワードのname属性を指定
 				.passwordParameter("passwordInput")
 				// ログイン成功時のリダイレクト先を指定
-				 .defaultSuccessUrl("/santaMenu")
+				 .defaultSuccessUrl("/santaMenu", true)
 				 // ログイン失敗時のリダイレクト先を指定
 				 .failureUrl("/login?error"))
 				 // ★ログアウト設定
