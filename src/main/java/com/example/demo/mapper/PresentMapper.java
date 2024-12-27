@@ -31,14 +31,5 @@ public interface PresentMapper {
             ORDER BY count DESC
         """)
         List<NameEntity> getPresentCounts();
-    
-    
-//    // プレゼント情報をデータベースに挿入
-//    @Insert("INSERT INTO enpresent (doll, block, game, book, bike,glove) VALUES (#{doll}, #{block}, #{game}, #{book}, #{bike}, #{glove})")
-//    void insertPresent(Enpresent present);
-//
-//    // 全てのリクエストを取得
-//    @Select("SELECT * FROM enpresent")
-//    List<Enpresent> selectAll(); // 全てのプレゼント情報を取得
       
 }
