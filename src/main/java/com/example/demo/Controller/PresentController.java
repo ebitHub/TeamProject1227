@@ -78,7 +78,6 @@ public class PresentController {
 	}
 
 	// リスト画面（listビュー）を表示
-	//「http://localhost:8080/list」でアクセス
 	@GetMapping("/list")
 	public String showList(Model model) {
 		model.addAttribute("present_list",presentMapper.getAllPresentEntities());
