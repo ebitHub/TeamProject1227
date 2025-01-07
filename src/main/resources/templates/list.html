@@ -7,10 +7,6 @@
 </head>
 <body>	
 	<h1>🎄リクエスト一覧⛄</h1>
-	<!-- サンタさんの画像
-	<div class="santa-image">
-	    <img src="/image/christmas_santa_sori.png" alt="ソリに乗ったサンタクロースの画像">
-	</div> -->
 	<form>
 	<div class="presentList">
 		<table th:if="${present_list}" border="1">
@@ -50,12 +46,12 @@
             </tbody>
         </table>
     </div>
-</form>
-<!-- /santaMenu画面に戻るリンク -->
-<div class="back-button">
-    <a href="/santaMenu">
-        <button type="button">サンタ専用メニューに戻る</button>
-    </a>
-    </div>
+	</form>
+	<!-- /santaMenu画面に戻るリンク -->
+	<div class="back-button">
+	    <a href="/santaMenu">
+	        <button type="button">サンタ専用メニューに戻る</button>
+	    </a>
+	</div>
 </body>
 </html>

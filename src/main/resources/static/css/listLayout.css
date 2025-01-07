@@ -3,7 +3,6 @@
 	width: 650px;
     height: 300px;
 	overflow: scroll;      /* スクロールする */
-	/*white-space: nowrap;   /* 自動改行しない */
 }
 
 /* 背景画像の設定 */
